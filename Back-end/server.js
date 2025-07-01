@@ -14,7 +14,10 @@ App.use(expressLayouts)
 App.use(express.static('public'))
 
 const mongoose_url = 'mongodb+srv://jmcportal123:jmcportal123@cluster0.rui8jjk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
-mongoose.connect(mongoose_url)
+mongoose.connect(mongoose_url,{
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
 .then(()=>console.log("connected sucessfully..."))
 .catch((err)=>console.log("Failed to connect:",err))
 
