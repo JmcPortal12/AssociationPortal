@@ -9,12 +9,25 @@ const Teacher = require('./../module/teacher')
 
 
 
-router.get('/',async(req,res)=>{
-    const user = await Teacher.find({});
-   
-this.addListener
-    res.status(200).json(user)
-})
+router.get('/', async (req, res) => {
+    try {
+        // This will return an empty array [] if no teachers exist
+        const teachers = await Teacher.find({});
+        
+        res.status(200).json({
+            success: true,
+            count: teachers.length,
+            data: teachers
+        });
+    } catch (error) {
+        console.error('Error fetching teachers:', error);
+        res.status(500).json({ 
+            success: false,
+            error: 'Failed to fetch teachers',
+            message: error.message 
+        });
+    }
+});
 
 router.post('/',async(req,res)=>
 {
