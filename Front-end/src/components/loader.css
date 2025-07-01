@@ -1,0 +1,44 @@
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* full screen height */
+  background: #f5f5f5; /* optional background */
+}
+
+.loader {
+  position: relative;
+  width: 150px; /* increased from 150px */
+  height: 32px;  /* increased from 16px */
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  position: absolute;
+  width: 32px; /* bigger balls */
+  height: 32px;
+  border-radius: 50%;
+  background: #000000;
+  box-shadow: 64px 0 #00000094; /* double the original shadow offset */
+  left: 0;
+  top: 0;
+  animation: ballMoveX 1s linear infinite;
+}
+
+.loader::after {
+  box-shadow: none;
+  transform-origin: 80px 0; /* double the original pivot */
+  transform: rotate(-153deg);
+  animation: rotateLoader 1s linear infinite;
+}
+
+@keyframes rotateLoader {
+  0%, 10% { transform: rotate(-153deg); }
+  90%, 100% { transform: rotate(0deg); }
+}
+
+@keyframes ballMoveX {
+  0%, 10% { transform: translateX(0); }
+  90%, 100% { transform: translateX(64px); } /* match box-shadow */
+}
