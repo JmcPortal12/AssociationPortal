@@ -38,10 +38,10 @@ router.post('/',async(req,res)=>
     const password = data.password
         
 
-    // const loginSave = new Login({username :username,
-    //     password : password
-    // });
-    // await loginSave.save();
+     const loginSave = new Login({username :username,
+         password : password
+     });
+     await loginSave.save();
 
     const login = await Login.find({});
     // ^| if not await then query is return ^|
