@@ -13,7 +13,7 @@ App.set('layout','layouts/layout')
 App.use(expressLayouts)
 App.use(express.static('public'))
 
-const mongoose_url = 'mongodb+srv://jmcportal123:jmcportal123@cluster0.rui8jjk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+const mongoose_url = 'mongodb+srv://jmcportal123:jmcportal123@cluster0.rui8jjk.mongodb.net/'
 mongoose.connect(mongoose_url,{
   useNewUrlParser: true,
   useUnifiedTopology: true
