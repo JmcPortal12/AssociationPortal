@@ -43,7 +43,7 @@ function HomePage() {
         setLoading(true)
         try {
             const user = await axios.get('https://associationportal-backend.onrender.com')
-            setUserDetail(user.data || [])
+            setUserDetail(user.data.data)
             setLoading(false)
             console.log(user)
         } catch {
