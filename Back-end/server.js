@@ -13,7 +13,7 @@ App.set('layout','layouts/layout')
 App.use(expressLayouts)
 App.use(express.static('public'))
 
-const mongoose_url = 'mongodb://localhost:27017/login'
+const mongoose_url = 'mongodb+srv://jmcportal123:jmcportal123@cluster0.rui8jjk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 mongoose.connect(mongoose_url)
 .then(()=>console.log("connected sucessfully..."))
 .catch((err)=>console.log("Failed to connect:",err))
