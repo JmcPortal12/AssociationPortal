@@ -42,7 +42,7 @@ function HomePage() {
     const fetchData = useCallback( async()=>{
         setLoading(true)
         try {
-            const user = await axios.get('http://localhost:3001')
+            const user = await axios.get('https://associationportal-backend.onrender.com')
             setUserDetail(user.data)
             setLoading(false)
             console.log(user)
@@ -58,7 +58,7 @@ function HomePage() {
     
      const handleDelete = async(id)=>{
         try {
-            const deleteUser = await axios.delete(`http://localhost:3001/${id}`)
+            const deleteUser = await axios.delete(`https://associationportal-backend.onrender.com/${id}`)
             console.log(deleteUser.data.message)
             fetchData()
             
