@@ -82,7 +82,7 @@ function Update() {
     
     try {
         
-      const send = await axios.put(`http://localhost:3001/${user._id}`,{formData});
+      const send = await axios.put(`https://associationportal-backend.onrender.com/${user._id}`,{formData});
       
       console.log(send.data.message)
       navigate('/homePage')
